@@ -2,6 +2,71 @@
 <html lang="en">
 {% load static %}
 <head>
+<style>
+
+
+    #circle {
+    background: yellow;
+    border-radius: 80%;
+    width: 150px;
+    height: 150px;
+}
+
+        #circle1 {
+    background: yellow;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.main-text
+{
+    float:left;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    color: #FFF;
+}
+
+
+
+
+.arrow {
+  border: solid #ea7e09;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+
+
+}
+.u{
+    position: fixed;
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  right: 15px;
+  bottom: 15px;
+  background: #ff5821;
+  color: #fff;
+  transition: display 0.5s ease-in-out;
+  z-index: 99999;
+}
+
+
+</style>
+
       <title>Nutrition India</title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -32,106 +97,37 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Flexor - v2.4.1
-  * Template URL: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
 
+
   <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-none d-lg-block" style="background-color: white;">
 
-
-        <div  class="d-flex align-items" >
-
-            <div class="p-2" > <img src="{% static 'images/mhf.png' %} " width="278" height="71" style="atsc-nav-down:50px">
-             </div>
-
-              <div class="ml-auto p-2"> <img src="{% static 'images/pa.png' %}" width="110" height="80" ></div>
-               </div>
-         </div>
-
-
-  </section>
-
-  <!-- ======= Header ======= -->
-
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div  style=" height:420px; " id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
   </ol>
-    <div class="carousel-inner" style="background-color: transparent">
-    <div class="carousel-item active">
-<div class="card bg-light text-white">
-  <img class="" src="{% static 'images/group_study-5.jpg' %}" alt="Card image">
-  <div class="card-img-overlay">
-
-      <img src="{% static 'images/nutrition_banner.png' %} " width="250" height="70" style="atsc-nav-down:50px">
-
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-  </div>
-</div>
+  <div class="carousel-inner">
+    <div align="middle" style="padding-top:30px;padding-left: 300px;padding-bottom: 40px" class="carousel-item active">
+      <img  width="350px " height="350px" class="rounded-circle" src="{% static 'images/group_study-5.png' %}" alt="Card image">
     </div>
-    <div class="carousel-item">
-<div class="card bg-light text-white">
-  <img class="bx-radio-circle-marked" src="{% static 'images/mothersfeeding-1.jpg' %}"alt="Card image">
-  <div class="card-img-overlay">
-            <img src="{% static 'images/nutrition_banner.png' %} " width="250" height="70" style="atsc-nav-down:50px">
-
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-  </div>
-</div>
+    <div align="center" style="padding-top:30px; padding-left: 300px;padding-bottom: 40px" class="carousel-item">
+     <img  width="350px " height="350px" class="rounded-circle" src="{% static 'images/mothersfeeding-1.png' %}" alt="Card image">
     </div>
-
-       <div class="carousel-item">
-<div class="card bg-dark text-white">
-  <img class="card-img" src="{% static 'images/motherwithbaby-2.jpg' %}" alt="Card image">
-  <div class="card-img-overlay">
-            <img src="{% static 'images/nutrition_banner.png' %} " width="250" height="70" style="atsc-nav-down:50px">
-
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-  </div>
-</div>
-    </div> <div class="carousel-item">
-<div class="card bg-dark text-white">
-  <img class="card-img"src="{% static 'images/fatherwithbaby-3.jpg' %}"alt="Card image">
-  <div class="card-img-overlay">
-            <img src="{% static 'images/nutrition_banner.png' %} " width="250" height="70" style="atsc-nav-down:50px">
-
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-  </div>
-</div>
-    </div> <div class="carousel-item">
-<div class="card bg-dark text-white">
-  <img class="card-img" src="{% static 'images/childrenwithteacher-4.jpg' %}" alt="Card image">
-  <div class="card-img-overlay">
-            <img src="{% static 'images/nutrition_banner.png' %} " width="250" height="70" style="atsc-nav-down:50px">
-
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-  </div>
-</div>
+    <div align="center"style="padding-top:30px; padding-left: 300px;padding-bottom: 40px" class="carousel-item">
+      <img  width="350px " height="350px" class="rounded-circle" src="{% static 'images/motherwithbaby-2.png' %}" alt="Card image">
     </div>
-
-
+      <div align="center" style="padding-top:30px; padding-left: 300px;padding-bottom: 40px"class="carousel-item">
+      <img width="350px " height="350px" class="rounded-circle" src="{% static 'images/fatherwithbaby-3.png' %}" alt="Card image">
+    </div>
+      <div align="center" style="padding-top:30px; padding-left: 300px;padding-bottom: 40px"class="carousel-item">
+          <img width="350px " height="350px" class="rounded-circle" src="{% static 'images/childrenwithteacher-4.png' %}" alt="Card image">
+    </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -142,48 +138,107 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
- <header id="header"  style="background-color:rgba(239,178,64,0.87); height:140px " >
-    <div  class="container d-flex">
 
-      <div class="logo mr-auto">
-        <h1 ><a  href="#header"><span style="color: black">LifeCycles</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
+<div  style="padding-bottom: 50px;" class="main-text">
 
-      <nav class="nav-menu d-none d-lg-block" >
-        <ul style="text-decoration-color: black">
-{#          <li class="active"><a style="color: black" href="#header">Home</a></li>#}
+   <div align="top" style="padding: 0px" class="d-flex align-items" >
+                                <div class="p-2" > <img src="{% static 'images/mhf.png' %} " width="278" height="71" style="atsc-nav-down:50px"></div>
 
-          <li><img width="100" height="100" class="rounded-circle" src="{% static 'icon/adolescence.png' %}">
-              <a style="color: black; "href="#about">Adolescence</a></li>
+                                <div align="" class="ml-auto p-2"> <img src="{% static 'images/pa.png' %}" width="110" height="80" ></div>
+
+   </div>
+    <img align="right"  src="{% static 'icon/img.png' %}" width="35" height="35" >
+      <div align="top"class="d-flex align-items" >
+         <div class="p-2"> <img src="{% static 'images/nutrition_banner.png' %} " width="690" height="120" style="padding-left:90px;padding-top: 0px;">
+
+         </div>
+
+          <div style="padding-bottom: 90px; padding-right: 180px" class="ml-auto p-2">
+              <div  style="padding-right: 180px;" >
+              <div id="circle"></div>
+          </div>
+          </div>
+
+   </div>
+
+
+
+<div class="row">
+<div style="padding-left:150px;padding-bottom: 120px;">
+                        <div class="card border-warning mb-3" style="size: landscape;max-width: 25rem;max-height: 9rem;">
+                            <div style="background-color: yellow;  color: black; text-align: left; " class="card-header">Updates</div>
+                            <div style="background-color: antiquewhite;overflow:hidden;color: black" class="card-body text-warning" >
+
+
+<form>
+                               <div id="up">
+                                <p class="textarea">Some quick example text to build on the card title </p>
+                                    <a href="#down"><i class="arrow down"></i></a>
+</div>
+
+  <div id="down">
+    <h1>You are down! fonew updates</h1>
+       <a href="#up"><i class="arrow up"></i></a>
+  </div>
+
+
+     </form>
+                            </div>
+
+                        </div>
+
+</div>
+    <div style="padding-left: 87px;padding-top: 15px;">
+    <div id="circle1"></div>
+        </div>
+
+</div>
+
+</div>
+
+
+{# header code#}
+
+
+ <header  id="header" style="background-color:#d7a05b; height: 160px " >
+
+     <div style="padding-left: 150px" class="container">
+        <h5 ><a ><span style="color: black">LifeCycles</span></a></h5>
+      <nav  class="nav-menu d-none d-lg-block" >
+        <ul >
+
+
           <li>
-              <img width="100" height="100" class="rounded-circle" src="{% static 'icon/delivery_PNC.png' %}"><a style="color: black"href="#services">Delivery/PNC</a></li>
+              <img width="100" height="100" class="rounded-circle" src="{% static 'icon/adolescence.png' %}">
+              <div style="background-color:orange" class="nav-item"><a href="#about">Adolescence</a></div></li>
           <li>
-              <img width="100" height="100" class="rounded-circle" src="{% static 'icon/early_childhood.png' %}"><a style="color: black"href="#portfolio">Early Childhood</a></li>
+              <img width="100" height="100" class="rounded-circle" src="{% static 'icon/delivery_PNC.png' %}">
+              <div style="background-color: orange" class="nav-item"><a href="#services">Delivery/PNC</a></div></li>
           <li>
-              <img width="100" height="100" class="rounded-circle" src="{% static 'icon/preconception.png' %}"><a style="color: black" href="#team">Preconception</a></li>
+              <img width="100" height="100" class="rounded-circle" src="{% static 'icon/early_childhood.png' %}">
+              <div style="background-color: orange" class="nav-item"><a href="#portfolio">Early Childhood</a></div></li>
           <li>
-              <img width="100" height="100" class="rounded-circle" src="{% static 'icon/pregnancy.png' %}"><a style="color: black"href="#pricing">Pregnancy</a></li>
+              <img width="100" height="100" class="rounded-circle" src="{% static 'icon/preconception.png' %}">
+              <div style="background-color: orange" class="nav-item"><a  href="#team">Preconception</a></div></li>
+          <li>
+              <img width="100" height="100" class="rounded-circle" src="{% static 'icon/pregnancy.png' %}">
+              <div style="background-color: orange"  class="nav-item"><a href="#pricing">Pregnancy</a></div></li>
             <li>
-                <img width="100" height="100" class="rounded-circle" src="{% static 'icon/school_age.png' %}"><a style="color: black"href="#contact">School age</a></li>
+                <img width="100" height="100" class="rounded-circle" src="{% static 'icon/school_age.png' %}"><div style="background-color:orange" class="nav-item"><a href="#contact">School age</a></div></li>
 
         </ul>
-      </nav><!-- .nav-menu -->
+      </nav>
+         <!-- .nav-menu -->
+     </div>
+ </header>
+<!-- End Header -->
 
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
 
 
-  <main id="main">
-
-    <!-- ======= Why Us Section ======= -->
-
+  <main style="padding-top: 100px; background-color: antiquewhite" id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about section-bg" style="background: antiquewhite">
+    <section id="about" class="about section-bg" style=" padding:0px;background: antiquewhite">
       <h3 style="padding-left: 25px; ">Adolescence</h3>
     <div class="card bg-transparent text-center" >
         <img style="padding-top: 25px; padding-left: 25px" width="200" height="200" class="rounded-circle" src="{% static 'icon/adolescence.png' %}">
@@ -200,186 +255,139 @@
 {#    card start#}
 
 
+       <div class="d-flex justify-content-around">
+        <div class="card-deck">
         <div class="row">
 
 {#      first card      #}
-  <div class="col-lg-4 col-md-6  mt-4 mt-lg-0">
-    <div class="box">
-
-        <div class="pricing">
-             <h4>Manifestation</h4>
-              <p> Information about 3 ohases and indetail explaination with 10 diffrenet urls </p>
-
-
-                  <div class="btn-wrap">
-                      <a  class="btn-buy" href="/dashboard" >Aneamia</a>
-                  </div>
-                  <div class="btn-wrap">
-                   <a class="btn-buy" href="#" role="button">Family Planing</a>
-                  </div>
-                  <div class="btn-wrap">
-                     <a class="btn-buy"href="#" role="button">Dibetic risk</a>
-                  </div>
-                  <div class="btn-wrap">
-                  <a class="btn-buy" href="#" role="button">Diet </a>
-                  </div>
-                  <div class="btn-wrap">
-                      <a class="btn-buy"href="#" role="button">Hypertension</a>
-                  </div>
-                  </div>
-
-
-
-
-             <div class="pricing">
-
-                  <div class="btn-wrap">
-                     <a class="btn-buy" href="#" role="button">Ca cunsumption</a>
-                  </div>
-                  <div class="btn-wrap">
-                     <a class="btn-buy" href="#" role="button">Use of MCP card</a>
-                  </div>
-                  <div class="btn-wrap">
-                      <a class="btn-buy"href="#" role="button">At List 4ANC visits</a>
-                  </div>
-                  <div class="btn-wrap">
-                        <a  class="btn-buy"href="#" role="button">IFA Cunsumption</a>
-                  </div>
-                  <div class="btn-wrap">
-                        <a  class="btn-buy"href="#" role="button">IF SuplimentsA</a>
-                  </div>
-                  </div>
-
-              </div>
-
-
-    </div>
-
-
-
-
-
-{#            second card#}
-  <div class="col-lg-4 col-md-6  mt-4 mt-lg-0">
-    <div class="box">
-
-
-        <div class="pricing">
-<h4>Intervention</h4>
-              <p> Information about 3 ohases and indetail explaination with 10 diffrenet urls </p>
-
-
-                  <div class="btn-wrap">
-                      <a  class="btn-buy" href="#" >Animia >></a>
-                  </div>
-                  <div class="btn-wrap">
-                   <a class="btn-buy" href="#" role="button">Family Planing</a>
-                  </div>
-                  <div class="btn-wrap">
-                     <a class="btn-buy"href="#" role="button">Dibetic risk</a>
-                  </div>
-                  <div class="btn-wrap">
-                  <a class="btn-buy" href="#" role="button">Diet </a>
-                  </div>
-                  <div class="btn-wrap">
-                      <a class="btn-buy"href="#" role="button">Hypertension</a>
-                  </div>
-                  </div>
-
-
-
-
-             <div class="pricing">
-
-                  <div class="btn-wrap">
-                     <a class="btn-buy" href="#" role="button">Ca cunsumption</a>
-                  </div>
-                  <div class="btn-wrap">
-                     <a class="btn-buy" href="#" role="button">Use of MCP card</a>
-                  </div>
-                  <div class="btn-wrap">
-                      <a class="btn-buy"href="#" role="button">At List 4ANC visits</a>
-                  </div>
-                  <div class="btn-wrap">
-                        <a  class="btn-buy"href="#" role="button">IFA Cunsumption</a>
-                  </div>
-                  <div class="btn-wrap">
-                        <a  class="btn-buy"href="#" role="button">IF SuplimentsA</a>
-                  </div>
-                  </div>
-
-              </div>
-
-
-    </div>
-
-{#        3rd card#}
-            <div class="col-lg-4 col-md-6  mt-4 mt-lg-0">
-    <div class="box">
-
+  <div class="cols-xl-6" style="max-width: 25rem">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
               <div class="pricing">
 
-<h4>Immediate and underline Determinants</h4>
-              <p> Information about 3 ohases and indetail explaination with 10 diffrenet urls </p>
-
-                  <div class="btn-wrap">
-                      <a  class="btn-buy" href="#" >Animia >></a>
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
                   </div>
-                  <div class="btn-wrap">
-                   <a class="btn-buy" href="#" role="button">Family Planing</a>
-                  </div>
-                  <div class="btn-wrap">
-                     <a class="btn-buy"href="#" role="button">Dibetic risk</a>
-                  </div>
-                  <div class="btn-wrap">
-                  <a class="btn-buy" href="#" role="button">Diet </a>
-                  </div>
-                  <div class="btn-wrap">
-                      <a class="btn-buy"href="#" role="button">Hypertension</a>
-                  </div>
-                  </div>
-
-
-
-
-             <div class="pricing">
-
-                  <div class="btn-wrap">
-                     <a class="btn-buy" href="#" role="button">Ca cunsumption</a>
-                  </div>
-                  <div class="btn-wrap">
-                     <a class="btn-buy" href="#" role="button">Use of MCP card</a>
-                  </div>
-                  <div class="btn-wrap">
-                      <a class="btn-buy"href="#" role="button">At List 4ANC visits</a>
-                  </div>
-                  <div class="btn-wrap">
-                        <a  class="btn-buy"href="#" role="button">IFA Cunsumption</a>
-                  </div>
-                  <div class="btn-wrap">
-                        <a  class="btn-buy"href="#" role="button">IF SuplimentsA</a>
-                  </div>
-                  </div>
-
               </div>
 
+         <div class="col-sm-3">
+         <div class="pricing">
 
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
+             </div>
+
+          </div>
     </div>
 
 
+
+  </div>
+  </div>
+
+{#            second card#}
+  <div class="cols-xl-6" style="max-width: 25rem">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
+              </div>
+
+         <div class="col-sm-3">
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
+             </div>
+
+          </div>
     </div>
 
+
+
+  </div>
+  </div>
+
+{#        3rd card#}
+       <div class="cols-xl-6" style="max-width: 25rem">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
+              </div>
+
+         <div class="col-sm-3">
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
+             </div>
+
+          </div>
+    </div>
+
+
+
+  </div>
+  </div>
+
+
+</div>
+</div>
+
+</div>
 
     </section><!-- End About Section -->
+
+
 
     <!-- ======= Clients Section ======= -->
 
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg" style="background: antiquewhite">
-       <h3 style="padding-left: 25px;">Delivery</h3>
+       <h3 style="padding-left: 25px;">Delivery/PNC</h3>
     <div class="card bg-transparent text-center">
-              <img class="rounded-circle" style="padding-top: 25px; padding-left: 25px" width="200" height="200"src="{% static 'icon/delivery_PNC.png' %}"><a style="color: black"href="#services">Delivery/PNC</a></li>
+              <img class="rounded-circle" style="padding-top: 25px; padding-left: 25px" width="200" height="200"src="{% static 'icon/delivery_PNC.png' %}">
 
   <div class="card-img-overlay">
     <h5 class="card-title">Card title</h5>
@@ -404,19 +412,25 @@
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div style="padding:initial;" class="d-flex justify-content-around">
           <div class="col-sm-3"  >
-          <a href="#" class="btn btn-primary btn-sm">somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
@@ -433,54 +447,72 @@
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-         <div style="padding:initial;" class="d-flex justify-content-around">
-          <div class="col-sm-3" >
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
-      </div>
     </div>
+
+
+
+  </div>
   </div>
 
 {#        3rd card#}
-        <div class="cols-xl-6" style="max-width: 25rem;">
+       <div class="cols-xl-6" style="max-width: 25rem">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <div style="padding:initial;" class="d-flex justify-content-around">
-          <div class="col-sm-3" >
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
-      </div>
     </div>
+
+
+
+  </div>
   </div>
 
 
@@ -489,9 +521,9 @@
 
 </div>
 
-</div>
 
-    </section><!-- End Services Section -->
+
+  </section><!-- End Services Section -->
 
     <!-- ======= Values Section ======= -->
 
@@ -516,31 +548,37 @@
 </div>
 {#    card start#}
 
-    <div class="d-flex justify-content-around">
+  <div class="d-flex justify-content-around">
         <div class="card-deck">
         <div class="row">
 
 {#      first card      #}
-  <div class="cols-xl-6" style="max-width: 25rem">
+   <div class="cols-xl-6" style="max-width: 25rem">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div style="padding:initial;" class="d-flex justify-content-around">
           <div class="col-sm-3"  >
-          <a href="#" class="btn btn-primary btn-sm">somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
@@ -557,60 +595,76 @@
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-         <div style="padding:initial;" class="d-flex justify-content-around">
-          <div class="col-sm-3" >
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
-      </div>
     </div>
+
+
+
+  </div>
   </div>
 
 {#        3rd card#}
-        <div class="cols-xl-6" style="max-width: 25rem;">
+       <div class="cols-xl-6" style="max-width: 25rem">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <div style="padding:initial;" class="d-flex justify-content-around">
-          <div class="col-sm-3" >
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
-      </div>
     </div>
+
+
+
+  </div>
   </div>
 
 
 </div>
-</div>
-
 </div>
 
 </div>
@@ -634,7 +688,7 @@
 </div>
 {#    card start#}
 
-    <div class="d-flex justify-content-around">
+  <div class="d-flex justify-content-around">
         <div class="card-deck">
         <div class="row">
 
@@ -646,19 +700,25 @@
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div style="padding:initial;" class="d-flex justify-content-around">
           <div class="col-sm-3"  >
-          <a href="#" class="btn btn-primary btn-sm">somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
@@ -675,60 +735,76 @@
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-         <div style="padding:initial;" class="d-flex justify-content-around">
-          <div class="col-sm-3" >
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
-      </div>
     </div>
+
+
+
+  </div>
   </div>
 
 {#        3rd card#}
-        <div class="cols-xl-6" style="max-width: 25rem;">
+       <div class="cols-xl-6" style="max-width: 25rem">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <div style="padding:initial;" class="d-flex justify-content-around">
-          <div class="col-sm-3" >
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
-      </div>
     </div>
+
+
+
+  </div>
   </div>
 
 
 </div>
-</div>
-
 </div>
 
 </div>
@@ -736,10 +812,10 @@
     </section><!-- End Team Section -->
 
     <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing section-bg" style="background: antiquewhite">
+    <section id="pricing" class="team section-bg" style="background: antiquewhite">
        <h3 style="padding-left: 25px;">Pregnancy</h3>
     <div class="card bg-transparent text-center">
-              <img class="rounded-circle"style="padding-top: 25px; padding-left: 25px" width="200" height="200" src="{% static 'icon/pregnancy.png' %}"><a style="color: black"href="#pricing">Pregnancy</a></li>
+              <img class="rounded-circle"style="padding-top: 25px; padding-left: 25px" width="200" height="200" src="{% static 'icon/pregnancy.png' %}"></li>
 
   <div class="card-img-overlay">
     <h5 class="card-title">Card title</h5>
@@ -752,7 +828,7 @@
 </div>
 {#    card start#}
 
-    <div class="d-flex justify-content-around">
+   <div class="d-flex justify-content-around">
         <div class="card-deck">
         <div class="row">
 
@@ -764,19 +840,25 @@
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div style="padding:initial;" class="d-flex justify-content-around">
           <div class="col-sm-3"  >
-          <a href="#" class="btn btn-primary btn-sm">somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
@@ -793,64 +875,80 @@
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-         <div style="padding:initial;" class="d-flex justify-content-around">
-          <div class="col-sm-3" >
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
-      </div>
     </div>
+
+
+
+  </div>
   </div>
 
 {#        3rd card#}
-        <div class="cols-xl-6" style="max-width: 25rem;">
+       <div class="cols-xl-6" style="max-width: 25rem">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <div style="padding:initial;" class="d-flex justify-content-around">
-          <div class="col-sm-3" >
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
-      </div>
     </div>
+
+
+
+  </div>
   </div>
 
+{##card end#}
 
 </div>
 </div>
 
 </div>
-
-</div>
-
     </section><!-- End Pricing Section -->
 
     <!-- ======= F.A.Q Section ======= -->
@@ -872,7 +970,7 @@
 </div>
 {#    card start#}
 
-    <div class="d-flex justify-content-around">
+   <div class="d-flex justify-content-around">
         <div class="card-deck">
         <div class="row">
 
@@ -884,19 +982,25 @@
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <div style="padding:initial;" class="d-flex justify-content-around">
           <div class="col-sm-3"  >
-          <a href="#" class="btn btn-primary btn-sm">somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
@@ -913,54 +1017,72 @@
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-         <div style="padding:initial;" class="d-flex justify-content-around">
-          <div class="col-sm-3" >
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
-      </div>
     </div>
+
+
+
+  </div>
   </div>
 
 {#        3rd card#}
-        <div class="cols-xl-6" style="max-width: 25rem;">
+       <div class="cols-xl-6" style="max-width: 25rem">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <div style="padding:initial;" class="d-flex justify-content-around">
-          <div class="col-sm-3" >
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+          <div style="padding:initial;" class="d-flex justify-content-around">
+          <div class="col-sm-3"  >
+              <div class="pricing">
+
+                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Hypertension</a></div>
+                  </div>
               </div>
 
          <div class="col-sm-3">
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+         <div class="pricing">
+
+                  <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" href="#" class="btn btn-warning btn-sm">Ca cunsumption</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Use of MCP card</a></div>
+          <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">At List 4ANC visits</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Cunsumption</a></div>
+           <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">IFA Supliments</a></div>
+                  </div>
              </div>
 
           </div>
-      </div>
     </div>
+
+
+
+  </div>
   </div>
 
 
@@ -968,9 +1090,6 @@
 </div>
 
 </div>
-
-</div>
-
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
