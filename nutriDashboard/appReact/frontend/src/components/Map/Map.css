@@ -109,11 +109,12 @@ button.ant-switch {
   /* background-color:red; */
   height:50vh;
   display:flex;
+  width: 100%;
 }
 
 .map_area{
   /* background-color:green; */
-  width:70%;
+  width:80%;
   /* justify-content:center; */
 /*   display:flex; */
 /*   flex-direction:row; */
@@ -144,7 +145,7 @@ button.ant-switch {
   flex-direction:column;
   /* background-color:yellow; */
   height:100%;
-  width:30%;
+  width:20%;
   justify-content:flex-end;
   
 }
@@ -154,11 +155,11 @@ button.ant-switch {
   width:100%;
 }
 
-.map_req_legend{
-  /* background-color:red; */
+/* .map_req_legend{
+  background-color:red;
   height:40%;
   width:100%;
-}
+} */
 .map_req_text{
   /* background-color:coral; */
   height:20%;

@@ -185,7 +185,7 @@ export const Map = ({
 
   useEffect(() => {
     const svg = select(svgRef.current);
-    const legend = select(svgLegRef.current)
+    const legend = select(svgRef.current)
     const { width, height } = dimensions || wrapperRef.current.getBoundingClientRect();
     const projection = geoMercator().fitSize([width, height], geometry);
 
@@ -451,10 +451,10 @@ export const Map = ({
       
     }
 
-    legend.selectAll("*").remove();
+    // legend.selectAll("*").remove();
     legend.append("g")
       .attr("class", "legendQuant")
-      .attr("transform", "translate(20,20)")
+        .attr("transform", `translate(${width - 140},${height-100})`)
 
     let formatter;
     if (toggleStateBurden === true) {
@@ -541,14 +541,20 @@ export const Map = ({
   return (
     <>
       <FullScreen className="fullscreen_css" handle={screen} onChange={checkchange}>
-      <SideNavFirst table={table} dataField="area" columnName="Area" screen={screen} title={mapTitle} timePeriod={graphTimeperiod} componentRef={svgRef}/>
+      <SideNavFirst table={table} id="svgMap" dataField="area" columnName="Area" screen={screen} title={mapTitle} timePeriod={graphTimeperiod} componentRef={svgRef}/>
       <div className="map">
       <div className="map_area">
       <div className="map_title">
         <small style={{textAlign:'center',fontWeight:"bold",fontSize:"13px"}}>{mapTitle}</small>
       </div>
-      <div className="map_svg" ref={wrapperRef}>
-        <svg  id="svgMap" className="svg-map" ref={svgRef} ></svg>
+      <div  className="map_svg" ref={wrapperRef}>
+          <svg  id="svgMap" width="100%" height="100%"  ref={svgRef} >
+
+          </svg>
+
+          {/* <svg  width="100%" height="30%"  ref={svgLegRef}></svg> */}
+       
+
       </div>
       
     </div>
@@ -563,7 +569,7 @@ export const Map = ({
               {burdenButton}  
             </div> */}
       <div className="map_req_legend">
-        <svg id="svgLegend" className="svg-legend" ref={svgLegRef}></svg>
+        {/* <svg id="svgLegend" className="svg-legend" ref={svgLegRef}></svg> */}
       </div>
       <div className="map_req_text">
           <div id="info-msg" className="msg"></div>
