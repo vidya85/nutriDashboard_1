@@ -6,14 +6,15 @@ import { createHierarchy, setVisulaizationData, setCardData, populateDropdowns }
 import { useParams } from "react-router-dom";
 import Cards  from "../../components/Cards/Cards";
 import {Trend}  from "../../components/Trend/Trend";
-import {BarGraph,BarGraphArea}  from "../../components/BarGraph/BarGraph";
+//import {BarGraph,BarGraphArea}  from "../../components/BarGraph/BarGraph";
 import { feature } from 'topojson';
 import { SkeletonCard, SkeletonDropdown, SkeletonMapCard } from "../SkeletonCard";
 import { Map } from "../../components/Map/Map";
 import "./Dropdown.css";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
-import arrow_fullscreen from './arrow_fullscreen.svg';
 import { Switch } from 'antd';
+import {BarArea} from "../../components/Bar/BarArea";
+import {Bar} from "../../components/Bar/Bar";
 
 
 
@@ -34,21 +35,7 @@ export const Dropdown = ({}) =>{
   const [indicatorDropdownOpt, setIndicatorDropdownOpt] = useState([]);
   const [timeperiodDropdownOpt, setTimeperiodDropdownOpt] = useState([]);
 
-  const lifecycleData = [
-    { value: 1, title: "Adolescence" },
-    { value: 2, title: "Women of Reproductive Age" },
-    { value: 3, title: "Pregnancy" },
-    { value: 4, title: "Delivery PNC" },      
-    { value: 5, title: "Early childhood" },
-    { value: 6, title: "School age" },  
-    { value: 7, title: "All" },               
-];
-const categoryData = [
-  { value: 1, title: "Manifestation" },
-  { value: 2, title: "Interventions" },
-  { value: 3, title: "Immediate Determinants" },
-  { value: 4, title: "Underlying Determinants" }            
-];
+
 
 const [lifecycledDropdownOpt, setLifecycleDropdownOpt] = useState([]);
   const [categorydDropdownOpt, setCategoryDropdownOpt] = useState([]);
@@ -88,10 +75,49 @@ const [lifecycledDropdownOpt, setLifecycleDropdownOpt] = useState([]);
   const screen4 = useFullScreenHandle();
 
   const map = document.getElementsByClassName("map");
+  const trend = document.getElementsByClassName("trend");
   const [burdenbuttonText, setBurdenButtonText] = useState("Burden");
   const changeBurdenText = (text) => setBurdenButtonText(text);
   const [toggleStateBurden,setToggleStateBurden]=useState(true);
 
+  const lifecycleData = [
+    { value: 1, title: "Adolescence" },
+    { value: 2, title: "Women of Reproductive Age" },
+    // { value: 3, title: "Pregnancy" },
+    // { value: 4, title: "Delivery PNC" },      
+    { value: 5, title: "Early childhood" },
+    { value: 6, title: "School age" },  
+    // { value: 7, title: "All" },               
+];
+
+useEffect(() => {
+  let categoryData = [];
+      if(selLifeycle === 1 || selLifeycle === 6){
+        setCategoryDropdownOpt([{value:1,title:"Manifestation"}])
+      }else if(selLifeycle === 2){
+        setCategoryDropdownOpt([
+          { value: 1, title: "Manifestation" },
+          { value: 4, title: "Underlying Determinants" }            
+        ]);
+      }else if(selLifeycle === 3 || selLifeycle ===4){
+        setCategoryDropdownOpt([
+          { value: 2, title: "Interventions" },
+          { value: 3, title: "Immediate Determinants" },           
+        ]);
+      }else if(selLifeycle ===5){
+        setCategoryDropdownOpt([
+          { value: 1, title: "Manifestation" },
+          { value: 2, title: "Interventions" },
+          { value: 3, title: "Immediate Determinants" },
+        ])
+      }else if(selLifeycle ===7){
+        setCategoryDropdownOpt([
+          { value: 4, title: "Underlying Determinants" }            
+        ])
+      }
+}, [selLifeycle])
+
+  
   // let boundaries;
   // let newBoundaries;
   // let Dboundaries;
@@ -127,7 +153,10 @@ const [lifecycledDropdownOpt, setLifecycleDropdownOpt] = useState([]);
       setToggleStateBurden(true);
       let subVal = '6';
       setLifecycleDropdownOpt(lifecycleData);
-      setCategoryDropdownOpt(categoryData);
+
+      
+  
+      // setCategoryDropdownOpt(categoryData);
       //await populateDropdowns(tab, indiVal, subVal, setIndicatorDropdownOpt, setSubgroupDropdownOpt, setSelIndicator, setSelSubgroup, setUnit, setGraphTitle, setGraphSubgroup, setGraphUnit)
       //await populateDropdowns(tab, indiVal, subVal, setIndicatorDropdownOpt, setSelIndicator, setUnit, setGraphTitle, setGraphUnit)
       await populateDropdowns(selLifeycle, selCategory, setIndicatorDropdownOpt, setSelIndicator, setUnit, setGraphTitle, setGraphUnit, selArea, parentArea, level, isLevelThree, setIndicatorBar, setIndicatorTrend, setSelIndiaData, setSelStateData, setSwitchDisplay, setSelDistrictsData,setTimeperiodDropdownOpt, setSelTimeperiod, setGraphTimeperiod)
@@ -504,7 +533,7 @@ const [lifecycledDropdownOpt, setLifecycleDropdownOpt] = useState([]);
         else{
           burdenButton= null;
         }
-
+    
 
     return (
       <>
@@ -635,9 +664,9 @@ const [lifecycledDropdownOpt, setLifecycleDropdownOpt] = useState([]);
             </div>
     </div> */}
 
-<div class="layout" id="layoutid">
-  <div class="layout_left">
-      <div class="layout_left_map">
+<div className="layout" id="layoutid">
+  <div className="layout_left">
+      <div className="layout_left_map">
         {isSelected? <Map boundaries={boundaries} 
           selIndiaData={selIndiaData} 
           setSelIndiaData ={setSelIndiaData}
@@ -678,28 +707,21 @@ const [lifecycledDropdownOpt, setLifecycleDropdownOpt] = useState([]);
           map={map}
           /> : null}
       </div>
-      
-     <div class="layout_left_bar1">
-      {isSelected? <BarGraphArea 
-      indicatorBar = {indicatorBar}
+     <div className="layout_left_bar1">
+     {isSelected? <BarArea
       graphTitle = {graphTitle}
       graphTimeperiod = {graphTimeperiod}
       graphUnit = {graphUnit}
       selIndiaData={selIndiaData} 
       level={level} 
-      unit={unit} 
-      unitName={graphUnit} 
       selArea={selArea} 
-      selIndicator={selIndicator}
-      isLevelThree = {isLevelThree}
-      selTimeperiod = {selTimeperiod}
       areaName = {areaName}
       selStateData = {selStateData}
       toggleStateBurden = {toggleStateBurden}/>: null}
      </div>
    </div>
-    <div class="layout_right">
-      <div class="layout_right_trend" >
+    <div className="layout_right">
+      <div className="layout_right_trend" >
       {isSelected?
       <Trend indicatorTrend = {indicatorTrend}
       graphTitle = {graphTitle}
@@ -707,10 +729,12 @@ const [lifecycledDropdownOpt, setLifecycleDropdownOpt] = useState([]);
       graphUnit = {graphUnit}
       areaName = {areaName}
       graphTimeperiod = {graphTimeperiod}
-      toggleStateBurden = {toggleStateBurden}/>: null}
+      toggleStateBurden = {toggleStateBurden}
+      trend = {trend}
+      />: null}
       </div>
-     <div class="layout_right_bar2">
-      {isSelected? <BarGraph indicatorBar = {indicatorBar}
+     <div className="layout_right_bar2">
+      {isSelected? <Bar indicatorBar = {indicatorBar}
       setIndicatorBar = {setIndicatorBar}
       selIndicator = {selIndicator}
       selTimeperiod = {selTimeperiod}

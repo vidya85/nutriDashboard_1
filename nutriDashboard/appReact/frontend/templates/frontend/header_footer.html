@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+
+
+  <title>Nutrition India</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  
+
+  <!-- Template Main CSS File -->
+
+</head>
+
+<body>
+
+
+
+
+<div  style="padding-bottom: 10px;" class="main-text">
+
+   <div align="top" style="padding: 0px" class="d-flex align-items" >
+        <div class="p-2" > <img src="{% static 'images/mhf.png' %} " width="278" height="71" style="atsc-nav-down:50px"></div>
+        <div align="" class="ml-auto p-2"> <img src="{% static 'images/pa.png' %}" width="110" height="80" ></div>
+   </div>
+   
+
+
+
+
+</div>
+
+{%block content%}
+{% endblock %}
+  <!-- ======= Footer ======= -->
+  <footer id="footer" style="margin-top: 100px;">
+  <div class="footer-contact">
+    <div class="d-flex justify-content-around" style="background-color: black">
+
+  <div class="p-2" >  <img src="{% static 'images/nutrition_banner.png' %} " width="102" height="12" style="atsc-nav-down:50px">
+            </div>
+                    <div class="p-2" >
+                          <img src="{% static 'images/unicef.png' %} " width="100" height="20" style="atsc-nav-down:50px">
+                    </div>
+         <div class="ml-auto p-2">
+             <img src="{% static 'images/unicef1.png' %}" width="108" height="30" >
+         </div>
+         </div>
+
+  </div>
+  <!-- End Footer -->
+  </footer>
+
+
+  {% block extra_javascript%}
+  {% endblock %}
+
+</body>
+
+</html>
