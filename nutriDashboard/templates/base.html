@@ -65,6 +65,167 @@
 }
 
 
+
+.blog-card{
+  position: absolute;
+  height: 150px;
+  width: 95%;
+  max-width: 550px;
+  margin: auto;
+  border-radius: 50px;
+
+  background: antiquewhite;
+  {#box-shadow: 0px 10px 50px rgba(252,56,56,.3);#}
+}
+.inner-part{
+  position: absolute;
+  {#display: flex;#}
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  {#padding:25px;#}
+}
+#imgTap:checked ~ .inner-part {
+  padding: 0;
+  transition: .1s ease-in;
+}
+.inner-part .img{
+  height: 260px;
+  width: 260px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 2px 3px 15px rgba(54, 48, 48, 0.109);
+}
+#imgTap:checked ~ .inner-part .img{
+  height: 370px;
+  width: 850px;
+  z-index: 99;
+  margin-top: 10px;
+  transition: .3s .2s ease-in;
+}
+.img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0;
+  transition: .6s;
+}
+#tap-1:checked ~ .inner-part .img-1,
+#tap-2:checked ~ .inner-part .img-2,
+#tap-3:checked ~ .inner-part .img-3{
+  opacity: 1;
+  transition-delay: .2s;
+}
+.content{
+  padding: 0 20px 0 35px;
+  width: 530px;
+  margin-left: 50px;
+  opacity: 0;
+  transition: .6s;
+}
+#imgTap:checked ~ .inner-part .content{
+  display: none;
+}
+#tap-1:checked ~ .inner-part .content-1,
+#tap-2:checked ~ .inner-part .content-2,
+#tap-3:checked ~ .inner-part .content-3{
+  opacity: 1;
+  margin-left: 0px;
+  z-index: 100;
+  transition-delay: .3s;
+}
+.content span{
+  display: block;
+  color: #7b7992;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 500
+}
+
+.content .title{
+  font-size: 30px;
+  font-weight: 700;
+  color: #0d0925;
+  margin-bottom: 20px;
+}
+.content .text{
+  color: #4e4a67;
+  font-size: 15px;
+
+  margin-bottom: 5px;
+  line-height: 1.5em;
+  text-align: justify;
+}
+.content button{
+  display: inline-flex;
+  padding: 15px 20px;
+  border: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff0e6;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #fd3535;
+  background: linear-gradient(147deg, #fe8a39  0%, #fd3838 74%);
+}
+.content button:hover{
+  background: linear-gradient(147deg, #fe791b 0%, #fd1c1c 74%);
+}
+.sliders{
+  position: absolute;
+  bottom: 25px;
+  left: 65%;
+  transform: translateX(-50%);
+  z-index: 12;
+}
+#imgTap:checked ~ .sliders{
+  display: none;
+}
+.sliders .tap{
+  position: relative;
+  height: 10px;
+  width: 50px;
+  background: #d9d9d9;
+  border-radius: 5px;
+  display: inline-flex;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.sliders .tap:hover{
+  background: #cccccc;
+}
+.sliders .tap:before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(147deg, #f65423 0%, #f2d726 74%);
+  border-radius: 10px;
+  transform: scaleX(0);
+  transition: transform .6s;
+  transform-origin: left;
+}
+input[type="radio"],
+input[type="checkbox"]{
+  display: none;
+}
+
+#tap-1:checked ~ .sliders .tap-1:before,
+#tap-2:checked ~ .sliders .tap-2:before,
+#tap-3:checked ~ .sliders .tap-3:before {
+  transform: scaleX(1);
+  width: 100%;
+}
+
+
+
 </style>
 
       <title>Nutrition India</title>
@@ -97,10 +258,29 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
 
+
+
+
+
+
 </head>
 
 <body>
-
+{#<script>#}
+{#var swiper = new Swiper('.blog-slider', {#}
+{#      spaceBetween: 30,#}
+{#      effect: 'fade',#}
+{#      loop: true,#}
+{#      mousewheel: {#}
+{#        invert: false,#}
+{#      },#}
+{#      // autoHeight: true,#}
+{#      pagination: {#}
+{#        el: '.blog-slider__pagination',#}
+{#        clickable: true,#}
+{#      }#}
+{#    });#}
+{#</script>#}
 
   <!-- ======= Top Bar ======= -->
 
@@ -163,37 +343,55 @@
 
 
 
+
 <div class="row">
-<div style="padding-left:150px;padding-bottom: 120px;">
-                        <div class="card border-warning mb-3" style="size: landscape;max-width: 25rem;max-height: 9rem;">
-                            <div style="background-color: yellow;  color: black; text-align: left; " class="card-header">Updates</div>
-                            <div style="background-color: antiquewhite;overflow:hidden;color: black" class="card-body text-warning" >
+  <div style="padding-left:80px;padding-bottom: 150px;">
+<div class="blog-card" >
+      <input type="radio" name="select" id="tap-1" checked>
+      <input type="radio" name="select" id="tap-2">
+      <input type="radio" name="select" id="tap-3">
+      <input type="checkbox" id="imgTap">
+      <div class="sliders">
+        <label for="tap-1" class="tap tap-1"></label>
+        <label for="tap-2" class="tap tap-2"></label>
+        <label for="tap-3" class="tap tap-3"></label>
+      </div>
+         <div class="inner-part">
 
+        <div class="content content-1">
 
-<form>
-                               <div id="up">
-                                <p class="textarea">Some quick example text to build on the card title </p>
-                                    <a href="#down"><i class="arrow down"></i></a>
-</div>
+             <div class="title">Updates</div>
+               <div style="justify-content: center; "class="text">Update 1 text.</div>
 
-  <div id="down">
-    <h1>You are down! fonew updates</h1>
-       <a href="#up"><i class="arrow up"></i></a>
-  </div>
+             </div>
+         </div>
+            <div class="inner-part">
 
+            <div class="content content-2">
 
-     </form>
-                            </div>
+          <div class="title">Updates</div>
+            <div style="justify-content: center;"class="text"> Update 2 Text </div>
 
-                        </div>
-
-</div>
-    <div style="padding-left: 87px;padding-top: 15px;">
-    <div id="circle1"></div>
         </div>
+     </div>
+         <div class="inner-part">
 
+        <div class="content content-3">
+
+             <div class="title">Updates</div>
+               <div style="justify-content: center;" class="text">Update Update 3 Text.</div>
+
+         </div>
+      </div>
+    </div>
+
+       </div>
+
+
+<div style="padding-left: 600px; padding-top: 50px;">
+     <div id="circle1"></div>
+    </div>
 </div>
-
 </div>
 
 
@@ -269,7 +467,7 @@
           <div class="col-sm-3"  >
               <div class="pricing">
 
-                  <div  class="btn-wrap"><a href="#" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
+                  <div  class="btn-wrap"><a href="dashboard" style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;" class="btn btn-warning btn-sm">Animia >></a></div>
           <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Family Planing</a></div>
           <div class="btn-wrap"> <a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Dibetic risk</a></div>
            <div class="btn-wrap"><a style="display: flex;align-items: center; justify-content: center;height: 60px; width: 90px;"href="#" class="btn btn-warning btn-sm">Diet </a></div>
@@ -1097,20 +1295,20 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
   <div class="footer-contact">
-    <div class="d-flex justify-content-around" style="background-color: black">
+    <div class="d-flex justify-content-between" style="background-color: black">
 
-  <div class="p-2" >  <img src="{% static 'images/nutrition_banner.png' %} " width="102" height="12" style="atsc-nav-down:50px">
+     <div style="padding-left: 20px; padding-top: 10px" >  <img src="{% static 'images/nutrition_banner.png' %} " width="132" height="19" >
             </div>
-                    <div class="p-2" >
-                          <img src="{% static 'images/unicef.png' %} " width="100" height="20" style="atsc-nav-down:50px">
+                    <div>
+                          <img src="{% static 'images/img.png' %} " width="100" height="50" >
                     </div>
-         <div class="ml-auto p-2">
+         <div style="padding-right: 20px;padding-top: 10px" >
              <img src="{% static 'images/unicef1.png' %}" width="108" height="30" >
          </div>
          </div>
 
   </div><!-- End Footer -->
-  </div>
+
   </footer>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
